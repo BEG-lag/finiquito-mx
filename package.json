@@ -1,6 +1,6 @@
 {
   "name": "finiquito-mx",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Exact, tested calculator of finiquito and liquidación (severance) under Mexico's Ley Federal del Trabajo. Every line item cites its legal basis.",
   "keywords": [
     "mexico",

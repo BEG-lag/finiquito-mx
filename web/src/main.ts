@@ -28,6 +28,16 @@ function $<T extends HTMLElement>(sel: string, type: new () => T): T {
 const form = $('#form', HTMLFormElement);
 const resultBody = $('#result-body', HTMLDivElement);
 const exampleNote = $('#example-note', HTMLParagraphElement);
+const live = $('#live', HTMLParagraphElement);
+
+// Screen readers hear only the new total, once typing pauses, not the whole table.
+let announceTimer: ReturnType<typeof setTimeout> | undefined;
+function announce(text: string): void {
+  clearTimeout(announceTimer);
+  announceTimer = setTimeout(() => {
+    if (live.textContent !== text) live.textContent = text;
+  }, 700);
+}
 
 let locale: Locale = decodeLocale(location.search);
 const fromUrl = decodeState(location.search);
@@ -186,6 +196,7 @@ function update(): void {
     return;
   }
   resultBody.replaceChildren(renderResult(result, state, locale, location.href));
+  announce(`${t(locale, 'result.total')}: ${result.totals.total.formatted}`);
 }
 
 // ------------------------------------------------------------------ events

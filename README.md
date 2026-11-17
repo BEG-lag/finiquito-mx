@@ -254,6 +254,7 @@ The UMA changes every February 1, so a termination in January uses the previous 
 - **ISR:** only the exempt portions are estimated. The actual withholding depends on LISR arts. 95 and 96 and on the rest of the year's income. Not tax advice.
 - **Not included:** PTU (profit sharing, which a settlement must itemize under art. 987), aguinaldo already paid during the year, savings funds, IMSS/INFONAVIT, death of the worker (art. 162 fr. V), and the 10% rule for deferring the prima on mass voluntary retirements (art. 162 fr. IV).
 - **Prescription** of untaken vacations and other claims (arts. 516 to 518) is not validated.
+- **Salary during a trial:** the three months and the back pay use the salary on the end date. Art. 48 refers to the salary at the date of payment, so raises during a long trial are not modeled.
 - **Professional minimum wages** (2a./J. 49/2013) can be passed as an override; the table bundles only the general and ZLFN minimum wages.
 
 ## Development

@@ -251,6 +251,7 @@ La UMA cambia cada 1 de febrero, así que una terminación en enero usa la UMA d
 - **ISR:** sólo se estiman las partes exentas. La retención real depende de los arts. 95 y 96 de la LISR y del resto de tus ingresos del año. No es asesoría fiscal.
 - **No incluye:** PTU (que el convenio debe desglosar, art. 987), aguinaldo ya pagado en el año, fondo de ahorro, IMSS/INFONAVIT, muerte del trabajador (art. 162 fr. V) ni la regla del 10% para diferir la prima en retiros voluntarios masivos (art. 162 fr. IV).
 - **La prescripción** de vacaciones no disfrutadas y demás acciones (arts. 516 a 518) no se valida.
+- **Salario durante el juicio:** los tres meses y los salarios vencidos usan el salario a la fecha de terminación. El art. 48 habla del salario a la fecha en que se realice el pago, así que no se modelan aumentos durante un juicio largo.
 - **Salarios mínimos profesionales** (2a./J. 49/2013): se capturan como valor manual; la tabla sólo trae el general y el de la ZLFN.
 
 ## Desarrollo

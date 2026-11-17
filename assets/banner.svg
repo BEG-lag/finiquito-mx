@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-labelledby="title desc">
+  <title id="title">finiquito-mx</title>
+  <desc id="desc">Calculator of finiquito and liquidación under Mexico's Ley Federal del Trabajo. A receipt lists aguinaldo, vacations, vacation premium, seniority premium and the three-month indemnity, each with its article, adding up to $163,006.86.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#eceee6" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="78%" cy="18%" r="60%">
+      <stop offset="0" stop-color="#cfff45" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#cfff45" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#11141b"/>
+      <stop offset="1" stop-color="#0d1015"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+    .serif { font-family: 'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif; font-style: italic; }
+    .paper { fill: #eceee6; }
+    .muted { fill: #969dab; }
+    .lime { fill: #cfff45; }
+    .amber { fill: #ffb648; }
+    .cyan { fill: #7fd8ff; }
+    .row { opacity: 0; animation: rise 0.6s cubic-bezier(.2,.7,.2,1) forwards; }
+    .r1 { animation-delay: 0.3s; }
+    .r2 { animation-delay: 0.55s; }
+    .r3 { animation-delay: 0.8s; }
+    .r4 { animation-delay: 1.05s; }
+    .r5 { animation-delay: 1.3s; }
+    .r6 { animation-delay: 1.6s; }
+    .r7 { animation-delay: 1.85s; }
+    .rule { stroke-dasharray: 470; stroke-dashoffset: 470; animation: draw 0.8s ease-out 1.55s forwards; }
+    .cursor { animation: blink 1.1s steps(1, end) 2.2s infinite; }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; transform-origin: 96px 92px; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+    @media (prefers-reduced-motion: reduce) {
+      .row, .rule, .cursor, .pulse { animation: none; opacity: 1; stroke-dashoffset: 0; transform: none; }
+    }
+  </style>
+
+  <rect width="1280" height="400" fill="#0a0c10"/>
+  <rect width="1280" height="400" fill="url(#grid)"/>
+  <rect width="1280" height="400" fill="url(#glow)"/>
+
+  <!-- Left: identity -->
+  <rect class="pulse" x="88" y="84" width="16" height="16" rx="3" fill="#cfff45"/>
+  <text class="mono paper" x="118" y="99" font-size="17" font-weight="700" letter-spacing="0.5">finiquito<tspan class="muted">-mx</tspan></text>
+
+  <text class="mono paper" x="86" y="186" font-size="58" font-weight="700" letter-spacing="-2">Finiquito</text>
+  <text class="mono paper" x="86" y="246" font-size="58" font-weight="700" letter-spacing="-2">&amp; liquidación</text>
+  <text class="serif lime" x="88" y="298" font-size="42">con fundamento.</text>
+
+  <text class="mono muted" x="88" y="344" font-size="15" letter-spacing="1.2">LEY FEDERAL DEL TRABAJO · TYPESCRIPT · EXACT TO THE CENTAVO</text>
+
+  <!-- Right: receipt -->
+  <g transform="translate(724 52)">
+    <rect width="480" height="300" rx="16" fill="url(#fade)" stroke="#191d27" stroke-width="1.5"/>
+    <text class="mono muted" x="28" y="42" font-size="12.5" letter-spacing="1.6">DESPIDO INJUSTIFICADO · 7.67 AÑOS</text>
+    <circle cx="446" cy="38" r="4" fill="#ffb648"/>
+
+    <g class="mono" font-size="15">
+      <g class="row r1">
+        <text class="paper" x="28" y="84">aguinaldo</text>
+        <text class="cyan" x="250" y="84" font-size="12.5">LFT 87</text>
+        <text class="paper" x="452" y="84" text-anchor="end">$10,410.92</text>
+      </g>
+      <g class="row r2">
+        <text class="paper" x="28" y="116">vacaciones</text>
+        <text class="cyan" x="250" y="116" font-size="12.5">LFT 76</text>
+        <text class="paper" x="452" y="116" text-anchor="end">$12,305.89</text>
+      </g>
+      <g class="row r3">
+        <text class="paper" x="28" y="148">prima vacacional</text>
+        <text class="cyan" x="250" y="148" font-size="12.5">LFT 80</text>
+        <text class="paper" x="452" y="148" text-anchor="end">$3,076.47</text>
+      </g>
+      <g class="row r4">
+        <text class="paper" x="28" y="180">prima antigüedad</text>
+        <text class="cyan" x="250" y="180" font-size="12.5">LFT 162</text>
+        <text class="paper" x="452" y="180" text-anchor="end">$58,001.88</text>
+      </g>
+      <g class="row r5">
+        <text class="paper" x="28" y="212">3 meses</text>
+        <text class="cyan" x="250" y="212" font-size="12.5">LFT 48</text>
+        <text class="paper" x="452" y="212" text-anchor="end">$79,211.70</text>
+      </g>
+    </g>
+
+    <line class="rule" x1="28" y1="234" x2="452" y2="234" stroke="#cfff45" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="470"/>
+
+    <g class="row r6 mono">
+      <text class="muted" x="28" y="272" font-size="13" letter-spacing="1.6">TOTAL</text>
+      <text class="lime" x="452" y="274" font-size="28" font-weight="700" text-anchor="end">$163,006.86</text>
+    </g>
+    <rect class="row r7 cursor" x="458" y="252" width="3" height="26" fill="#cfff45"/>
+  </g>
+</svg>

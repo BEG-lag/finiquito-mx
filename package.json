@@ -52,9 +52,12 @@
     "build:web": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "example": "node scripts/example.ts",
+    "example": "node scripts/readme-example.ts",
     "screenshots": "node scripts/screenshots.ts",
-    "check": "npm run typecheck && npm run lint && npm run coverage && npm run build"
+    "check": "npm run typecheck && npm run lint && npm run check:dashes && npm run coverage && npm run build",
+    "readme:sync": "node scripts/readme-example.ts --write",
+    "check:dashes": "node scripts/check-dashes.ts",
+    "prepare": "tsc -p tsconfig.build.json"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -11,6 +11,13 @@
   <a href="LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/license-MIT-eceee6?labelColor=0a0c10" /></a>
 </p>
 
+<!-- demo:start -->
+<p align="center">
+  <img src="assets/demo.gif" alt="Grabación de pantalla de la calculadora en vivo: se limpia el ejemplo, se captura el caso del README (ingreso 2019-03-01, despido 2026-10-31, $25,000 mensuales, despido injustificado) y el desglose suma $163,006.86, cada concepto con su artículo." width="100%">
+</p>
+<p align="center"><sub>Grabación real de <a href="https://beg-lag.github.io/finiquito-mx/">la app en vivo</a>. <a href="assets/demo.mp4">Versión MP4</a>.</sub></p>
+<!-- demo:end -->
+
 # finiquito-mx
 
 **Calculadora rigurosa y probada de finiquito y liquidación conforme a la Ley Federal del Trabajo.**

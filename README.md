@@ -11,6 +11,13 @@
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-eceee6?labelColor=0a0c10" /></a>
 </p>
 
+<!-- demo:start -->
+<p align="center">
+  <img src="assets/demo.gif" alt="Screen recording of the live calculator: the sample is cleared, the worked example is typed (hired 2019-03-01, dismissed 2026-10-31, $25,000 a month, unjustified dismissal) and the breakdown totals $163,006.86, each item with its article." width="100%">
+</p>
+<p align="center"><sub>Real recording of <a href="https://beg-lag.github.io/finiquito-mx/">the live app</a>. <a href="assets/demo.mp4">MP4 version</a>.</sub></p>
+<!-- demo:end -->
+
 # finiquito-mx
 
 **A rigorous, tested calculator of _finiquito_ and _liquidación_ (severance) under Mexico's Ley Federal del Trabajo.**

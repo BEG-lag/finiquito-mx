@@ -297,6 +297,7 @@ This software does not constitute legal opinion or tax advice. Labor disputes de
 
 - Site: [pivotek.mx](https://pivotek.mx)
 - AI portfolio: [github.com/BEG-lag/portafolio-ia](https://github.com/BEG-lag/portafolio-ia)
+- For lawyers: [Con Criterio](https://concriterio.mx), an AI toolkit for legal practice in Mexico (guide, Claude Code plugins and skills).
 
 Developed with AI assistance (Claude Code). Issues and corrections, especially on legal interpretation, are welcome.
 

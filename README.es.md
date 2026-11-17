@@ -281,6 +281,7 @@ Este software no constituye opinión legal ni asesoría fiscal. Un conflicto lab
 
 - Sitio: [pivotek.mx](https://pivotek.mx)
 - Portafolio de IA: [github.com/BEG-lag/portafolio-ia](https://github.com/BEG-lag/portafolio-ia)
+- Para abogados: [Con Criterio](https://concriterio.mx), kit de IA para la práctica legal en México (guía, plugins y skills de Claude Code).
 
 Desarrollado con asistencia de IA (Claude Code). Se agradecen issues y correcciones, sobre todo de interpretación legal.
 

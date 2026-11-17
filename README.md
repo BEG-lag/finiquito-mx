@@ -268,7 +268,7 @@ npm run readme:sync  # rewrite the example blocks in both READMEs
 npm run build:web && npm run screenshots   # headless-browser smoke checks + screenshots
 ```
 
-- **Tests** ([`test/`](test)): six hand-checked worked examples with the arithmetic in comments, edge cases (same-day employment, leap years and February 29 hires, exactly 15 years, the minimum-wage floor and cap, every option, both languages), property-based tests with [fast-check](https://fast-check.dev) (totals add up, nothing is negative, more salary or more tenure never lowers the result, exempt never exceeds gross), and tests of the shareable-URL state. Coverage thresholds are enforced in CI.
+- **Tests** ([`test/`](test)): 123 tests in 9 files, with 100% line coverage. They include six hand-checked worked examples with the arithmetic in comments, edge cases (same-day employment, leap years and February 29 hires, exactly 15 years, the minimum-wage floor and cap, every option, both languages), property-based tests with [fast-check](https://fast-check.dev) (totals add up, nothing is negative, more salary or more tenure never lowers the result, exempt never exceeds gross), and tests of the shareable-URL state. Coverage thresholds are enforced in CI.
 - **Browser checks** ([`scripts/screenshots.ts`](scripts/screenshots.ts)): no console errors, no horizontal scroll at 390 px, every control labelled, keyboard navigation of the reason radios, and a print view without the form.
 - **CI** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)): typecheck, lint, tests with coverage and build on Node 22 and 24. [`pages.yml`](.github/workflows/pages.yml) deploys the calculator to GitHub Pages.
 

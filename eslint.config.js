@@ -30,4 +30,12 @@ export default tseslint.config(
     files: ['eslint.config.js'],
     ...tseslint.configs.disableTypeChecked,
   },
+  {
+    files: ['web/public/**/*.js'],
+    ...tseslint.configs.disableTypeChecked,
+    languageOptions: {
+      ...tseslint.configs.disableTypeChecked.languageOptions,
+      globals: { ...globals.serviceworker },
+    },
+  },
 );

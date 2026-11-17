@@ -1,0 +1,12 @@
+{
+  "name": "finiquito-mx · Calculadora de finiquito y liquidación",
+  "short_name": "finiquito-mx",
+  "description": "Finiquito y liquidación conforme a la Ley Federal del Trabajo, con el artículo de cada concepto.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0c10",
+  "theme_color": "#0a0c10",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

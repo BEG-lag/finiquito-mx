@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de finiquito y liquidación (LFT) · finiquito-mx</title>
+    <meta
+      name="description"
+      content="Calcula tu finiquito y tu liquidación conforme a la Ley Federal del Trabajo, con el artículo que fundamenta cada concepto. Gratis, sin registro y sin enviar tus datos."
+    />
+    <meta name="theme-color" content="#0a0c10" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content="finiquito-mx · Calculadora de finiquito y liquidación" />
+    <meta property="og:description" content="Cada concepto con su fórmula y su artículo de la Ley Federal del Trabajo." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beg-lag.github.io/finiquito-mx/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+  </head>
+  <body>
+    <a class="skip" href="#result" data-i18n="nav.skip">Saltar al resultado</a>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="finiquito-mx">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>finiquito<span class="brand-dim">-mx</span></span>
+      </a>
+      <nav class="topnav">
+        <button type="button" class="lang" id="lang" data-i18n-attr="aria-label:lang.label" aria-label="Cambiar idioma">
+          <span data-i18n="lang.switch">English</span>
+        </button>
+        <a class="ghost" href="https://github.com/BEG-lag/finiquito-mx" rel="noopener">
+          <span data-i18n="nav.source">Código</span> ↗
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="kicker" data-i18n="hero.kicker">Ley Federal del Trabajo · salario mínimo y UMA 2026</p>
+        <h1>
+          <span data-i18n="hero.title.a">Tu finiquito,</span>
+          <em data-i18n="hero.title.b">con fundamento.</em>
+        </h1>
+        <p class="lead" data-i18n="hero.lead">
+          Calcula finiquito y liquidación conforme a la LFT. Cada concepto muestra su fórmula y el artículo que lo
+          sustenta. El cálculo ocurre en tu navegador: nada se envía a ningún servidor.
+        </p>
+      </section>
+
+      <div class="layout">
+        <form id="form" class="panel form" novalidate autocomplete="off">
+          <p class="example-note" id="example-note">
+            <span data-i18n="form.example">Datos de ejemplo. Cámbialos por los tuyos.</span>
+            <button type="button" class="link" id="reset" data-i18n="form.reset">Limpiar</button>
+          </p>
+
+          <fieldset>
+            <legend data-i18n="form.dates">Fechas</legend>
+            <div class="grid-2">
+              <label class="field">
+                <span data-i18n="form.start">Fecha de ingreso</span>
+                <input type="date" name="start" id="start" required min="1950-01-01" max="2100-12-31" />
+              </label>
+              <label class="field">
+                <span data-i18n="form.end">Fecha de terminación</span>
+                <input type="date" name="end" id="end" required min="1950-01-01" max="2100-12-31" />
+              </label>
+            </div>
+            <p class="error" id="error-dates" role="alert" hidden></p>
+          </fieldset>
+
+          <fieldset>
+            <legend data-i18n="form.salary">Salario</legend>
+            <div class="grid-salary">
+              <label class="field">
+                <span data-i18n="form.amount">Salario ordinario</span>
+                <span class="money-input">
+                  <span aria-hidden="true">$</span>
+                  <input type="text" inputmode="decimal" name="salary" id="salary" required aria-describedby="salary-hint" />
+                </span>
+              </label>
+              <label class="field">
+                <span data-i18n="form.period">Periodo</span>
+                <select name="period" id="period">
+                  <option value="daily" data-i18n="period.daily">Diario</option>
+                  <option value="weekly" data-i18n="period.weekly">Semanal</option>
+                  <option value="biweekly" data-i18n="period.biweekly">Quincenal</option>
+                  <option value="monthly" data-i18n="period.monthly">Mensual</option>
+                </select>
+              </label>
+            </div>
+            <p class="hint" id="salary-hint" data-i18n="form.amount.hint">Sin bonos ni vales: esos van en "otras prestaciones".</p>
+            <p class="error" id="error-salary" role="alert" hidden></p>
+            <div class="segmented" role="radiogroup" aria-labelledby="zone-label">
+              <span class="seg-label" id="zone-label" data-i18n="form.zone">Zona del salario mínimo</span>
+              <label><input type="radio" name="zone" value="general" /><span data-i18n="zone.general">General</span></label>
+              <label><input type="radio" name="zone" value="zlfn" /><span data-i18n="zone.zlfn">Frontera Norte</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-i18n="form.reason">Motivo de terminación</legend>
+            <div class="reasons">
+              <label class="reason">
+                <input type="radio" name="reason" value="resignation" />
+                <span class="reason-title" data-i18n="reason.resignation">Renuncia voluntaria</span>
+                <span class="reason-hint" data-i18n="reason.resignation.hint">Prima de antigüedad sólo con 15 años o más</span>
+              </label>
+              <label class="reason">
+                <input type="radio" name="reason" value="mutual-agreement" />
+                <span class="reason-title" data-i18n="reason.mutual-agreement">Mutuo acuerdo</span>
+                <span class="reason-hint" data-i18n="reason.mutual-agreement.hint">Terminación por mutuo consentimiento, art. 53 fr. I</span>
+              </label>
+              <label class="reason">
+                <input type="radio" name="reason" value="justified-dismissal" />
+                <span class="reason-title" data-i18n="reason.justified-dismissal">Despido justificado</span>
+                <span class="reason-hint" data-i18n="reason.justified-dismissal.hint">Rescisión por causa del trabajador, art. 47</span>
+              </label>
+              <label class="reason">
+                <input type="radio" name="reason" value="unjustified-dismissal" />
+                <span class="reason-title" data-i18n="reason.unjustified-dismissal">Despido injustificado</span>
+                <span class="reason-hint" data-i18n="reason.unjustified-dismissal.hint">Indemnización de 3 meses, art. 48</span>
+              </label>
+              <label class="reason">
+                <input type="radio" name="reason" value="worker-rescission" />
+                <span class="reason-title" data-i18n="reason.worker-rescission">Rescisión por causa del patrón</span>
+                <span class="reason-hint" data-i18n="reason.worker-rescission.hint">El trabajador se separa, arts. 51 y 52</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <details class="more">
+            <summary data-i18n="form.benefits">Prestaciones y pendientes</summary>
+            <div class="grid-2">
+              <label class="field">
+                <span data-i18n="form.aguinaldoDays">Días de aguinaldo al año</span>
+                <input type="text" inputmode="decimal" name="aguinaldoDays" id="aguinaldoDays" />
+              </label>
+              <label class="field">
+                <span data-i18n="form.premium">Prima vacacional (%)</span>
+                <input type="text" inputmode="decimal" name="premium" id="premium" />
+              </label>
+              <label class="field">
+                <span data-i18n="form.other">Otras prestaciones mensuales</span>
+                <input type="text" inputmode="decimal" name="other" id="other" aria-describedby="other-hint" />
+                <small class="hint" id="other-hint" data-i18n="form.other.hint">Bonos, vales, comisiones: integran el salario (art. 84).</small>
+              </label>
+              <label class="field">
+                <span data-i18n="form.sdi">Salario diario integrado conocido</span>
+                <input type="text" inputmode="decimal" name="sdi" id="sdi" aria-describedby="sdi-hint" />
+                <small class="hint" id="sdi-hint" data-i18n="form.sdi.hint">Opcional. Si lo dejas vacío, se estima.</small>
+              </label>
+              <label class="field">
+                <span data-i18n="form.wageDays">Días de salario sin pagar</span>
+                <input type="text" inputmode="decimal" name="wageDays" id="wageDays" />
+              </label>
+              <label class="field">
+                <span data-i18n="form.priorVacation">Vacaciones de años anteriores sin disfrutar (días)</span>
+                <input type="text" inputmode="decimal" name="priorVacation" id="priorVacation" />
+              </label>
+              <label class="field">
+                <span data-i18n="form.takenVacation">Vacaciones ya disfrutadas este año de servicio (días)</span>
+                <input type="text" inputmode="decimal" name="takenVacation" id="takenVacation" />
+              </label>
+            </div>
+          </details>
+
+          <details class="more" id="options">
+            <summary data-i18n="form.options">Criterios debatibles y escenarios</summary>
+            <p class="hint" data-i18n="form.options.lead">
+              Donde la ley o los tribunales admiten más de una lectura, tú eliges. Cada opción explica su sustento.
+            </p>
+            <div class="stack">
+              <label class="field">
+                <span data-i18n="form.seniorityBase">Salario base de la prima de antigüedad</span>
+                <select name="seniorityBase" id="seniorityBase">
+                  <option value="daily" data-i18n="base.daily">Cuota diaria (por omisión)</option>
+                  <option value="integrated" data-i18n="base.integrated">Salario integrado</option>
+                </select>
+              </label>
+              <label class="field" id="mutual-field">
+                <span data-i18n="form.mutualAs">El mutuo acuerdo se trata como</span>
+                <select name="mutualAs" id="mutualAs">
+                  <option value="voluntary" data-i18n="mutual.voluntary">Retiro voluntario</option>
+                  <option value="employer-initiated" data-i18n="mutual.employer">Separación decidida por el patrón</option>
+                </select>
+              </label>
+              <label class="field">
+                <span data-i18n="form.twenty">20 días por año (art. 50 fr. II)</span>
+                <select name="twenty" id="twenty">
+                  <option value="auto" data-i18n="twenty.auto">Según el motivo</option>
+                  <option value="yes" data-i18n="twenty.yes">Incluir</option>
+                  <option value="no" data-i18n="twenty.no">No incluir</option>
+                </select>
+              </label>
+              <label class="field">
+                <span data-i18n="form.months">Escenario de juicio: meses de litigio</span>
+                <input type="text" inputmode="decimal" name="months" id="months" aria-describedby="months-hint" />
+                <small class="hint" id="months-hint" data-i18n="form.months.hint">
+                  Salarios vencidos (tope 12 meses) e intereses después. Sólo despido injustificado o rescisión.
+                </small>
+              </label>
+              <label class="check">
+                <input type="checkbox" name="tax" id="tax" />
+                <span data-i18n="form.tax">Estimar partes exentas de ISR</span>
+              </label>
+              <div class="grid-2">
+                <label class="field">
+                  <span data-i18n="form.mw">Salario mínimo diario (manual)</span>
+                  <input type="text" inputmode="decimal" name="mw" id="mw" aria-describedby="mw-hint" />
+                  <small class="hint" id="mw-hint" data-i18n="form.mw.hint">Para fechas fuera de 2025-2026 o un salario mínimo profesional.</small>
+                </label>
+                <label class="field">
+                  <span data-i18n="form.uma">UMA diaria (manual)</span>
+                  <input type="text" inputmode="decimal" name="uma" id="uma" />
+                </label>
+              </div>
+            </div>
+          </details>
+          <p class="error" id="error-general" role="alert" hidden></p>
+        </form>
+
+        <section id="result" class="panel result" aria-labelledby="result-title" tabindex="-1">
+          <h2 id="result-title" class="visually-hidden" data-i18n="result.title">Resultado</h2>
+          <div id="result-body" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title" data-i18n="footer.sources">Fuentes</p>
+          <ul class="sources" id="sources"></ul>
+        </div>
+        <div>
+          <p class="footer-title" data-i18n="footer.author">Hecho por</p>
+          <p>
+            <a href="https://pivotek.mx" rel="noopener">Benjamín Esponda García</a>
+          </p>
+          <p class="muted" data-i18n="footer.role">Abogado corporativo en la Ciudad de México que construye con IA.</p>
+          <p class="muted"><span data-i18n="footer.license">Código abierto bajo licencia MIT.</span> <span data-i18n="footer.privacy">Sin cookies, sin analítica, sin servidor.</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

@@ -77,6 +77,7 @@ a {
 /* ------------------------------------------------------------------ top bar */
 .topbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -106,6 +107,50 @@ a {
 
 .brand-dim {
   color: var(--muted);
+}
+
+/* PIVOTEK logo next to the site name (orange on ink). The logotype is never
+   narrower than 90px: the isotype takes its place only where that keeps the
+   bar on one row. Below 420px the buttons wrap to a second row and the
+   logotype fits again. */
+.pvk {
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 22px;
+  margin-right: auto;
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.pvk:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* Optical alignment: the lowercase of "pivotek" sits on the baseline of the
+   site name, and so does the bowl of the isotype's p. */
+.pvk img {
+  display: block;
+  transform: translateY(2px);
+}
+
+.pvk .pvk-iso {
+  transform: translateY(4px);
+}
+
+.pvk-iso {
+  display: none !important;
+}
+
+@media (min-width: 420px) and (max-width: 509px) {
+  .pvk-logo {
+    display: none !important;
+  }
+
+  .pvk-iso {
+    display: block !important;
+  }
 }
 
 .topnav {

@@ -4,7 +4,14 @@
 // PRECACHE are filled in at build time (see vite.config.ts), so every
 // release gets a fresh cache.
 const VERSION = 'finiquito-mx-dev';
-const SHELL = ['./', './index.html', './favicon.svg', './manifest.webmanifest'];
+const SHELL = [
+  './',
+  './index.html',
+  './favicon.svg',
+  './manifest.webmanifest',
+  './pivotek-logotipo-naranja.svg',
+  './pivotek-isotipo-naranja.svg',
+];
 // Hashed JS, CSS and font files; filled in at build time by vite.config.ts.
 const PRECACHE = [];
 

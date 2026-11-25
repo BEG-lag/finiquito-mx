@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://pivotek.mx"><img src="assets/pivotek-logo.svg" alt="PIVOTEK" width="200"></a>
+</p>
+
 <p align="right"><a href="README.md">English</a> · <strong>Español</strong></p>
 
 <p align="center">
